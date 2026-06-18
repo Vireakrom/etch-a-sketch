@@ -23,7 +23,6 @@ function generateSquare(squareNumber) {
 
 function removeContainerChild() {
   let containerChild = document.querySelectorAll(".subContainer");
-  console.log(containerChild.length);
   if (containerChild.length > 0) {
     for (const element of containerChild) {
       container.removeChild(element);
@@ -53,9 +52,13 @@ function askUserSquare() {
 
 function setNewBg() {
   let divs = document.querySelectorAll(".subContainer");
+
   for (let element of divs) {
+    const red = randomNum();
+    const green = randomNum();
+    const blue = randomNum();
     element.addEventListener("mouseover", () => {
-      element.setAttribute("id", "newBg");
+      element.style.backgroundColor = `rgb(${red},${green},${blue})`;
     });
   }
 }
@@ -69,6 +72,8 @@ function newSquare() {
   askUserSquare();
   startFirstScratch();
 }
+
+let randomNum = () => Math.floor(Math.random() * 256);
 
 btn.addEventListener("click", () => {
   newSquare();
