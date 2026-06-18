@@ -22,6 +22,8 @@ function generateSquare(squareNumber) {
 }
 
 function removeContainerChild() {
+  container.style.opacity = 1;
+
   let containerChild = document.querySelectorAll(".subContainer");
   if (containerChild.length > 0) {
     for (const element of containerChild) {
@@ -53,12 +55,18 @@ function askUserSquare() {
 function setNewBg() {
   let divs = document.querySelectorAll(".subContainer");
 
+  let opacity = 1;
   for (let element of divs) {
     const red = randomNum();
     const green = randomNum();
     const blue = randomNum();
     element.addEventListener("mouseover", () => {
       element.style.backgroundColor = `rgb(${red},${green},${blue})`;
+      if (opacity > 0) {
+        container.style.opacity = opacity;
+        opacity -= 0.1;
+        console.log(opacity);
+      }
     });
   }
 }
