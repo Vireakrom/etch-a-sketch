@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.btn{
+    height: 30px;
+    width: auto;
+    border: 2px solid blue;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: red;
+    align-items: center;
+    width: 576px;
+    height: 576px;
+    border: 0;
+    margin: 0;
+}
+.subContainer{
+    border: 0;
+    margin: 0;
+}
+#newBg{
+    background-color: black;
+}
